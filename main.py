@@ -23,12 +23,12 @@ def printToss(comToss):
 def play_innings(role, wicket, over, target=None):
     score = 0
     wicket_count = 0
-    for ball in range(over * 6):
+    for ball in range((over * 6)+1):
         if target and score > target:
             break
         comp_choice = random.randint(1, 6)
         try:
-            user_choice = int(input(f"Ball {ball + 1} Total Run {score}\nYou Choose for {'Bowling' if role == BOWLING else 'Batting'}: "))
+            user_choice = int(input(f"Ball {ball} Total Run {score} Wicket {wicket_count}\nYou Choose for {'Bowling' if role == BOWLING else 'Batting'}: "))
         except ValueError:
             print("Invalid input, please enter a number between 1 and 6.")
             continue
